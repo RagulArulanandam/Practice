@@ -1,0 +1,1 @@
+C:\projects\Apps.webApp.GoldPriceTrigger\obj\Debug\Apps.webApp.GoldPriceTrigger.esproj.CoreCompileInputs.cache
