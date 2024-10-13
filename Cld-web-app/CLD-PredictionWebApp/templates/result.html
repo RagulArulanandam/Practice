@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% if title %}
+        <title>CassavaLeafDiseaseIdentification-{{ title }}</title>
+        {% else %}
+        <title>CassavaLeafDiseaseIdentification</title>
+        {% endif %}
+
+        <link rel="shortcut icon" href="./static/cassava.png" type="image/x-icon" >
+    </head>
+    <style>
+        .body {
+          margin: 0;
+          font-family: Arial, Helvetica, sans-serif;
+        }
+    
+        .topnav {
+          overflow: hidden;
+          background-color: #347C2C;
+        }
+        .topnav a {
+          float: left;
+          color: #f2f2f2;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+        }
+    
+        .topnav a:hover {
+          background-color: #F0FFFF;
+          color: black;
+        }
+        .navbar-brand{
+          font-family:Fantasy;
+          color:#FFFFFF;
+        }
+        .content{
+          margin: center;
+          font-family:Monospace;
+          background-color: lightblue;
+          border-style: solid;
+        }
+    
+    
+      </style>
+    <body>
+      <div class="topnav">
+        <a class="navbar-brand" href="#">CassavaLeaf Disease Identification</a>
+        <a  href="home.html">Home</a>
+        <a href="journal.html">Journals</a>
+        <a href="Images.html">Images</a>
+        <a href="about.html">About</a>
+      </div>
+      <br><br>
+          
+        <!-- <img src="F:\New folder\cassava-leaf-disease-classification\train_images\2323936.jpg"  width="500px" height="500px" alt="guhan"> -->
+        <h2>{{ msg }}</h2>
+    </body>
+</html>

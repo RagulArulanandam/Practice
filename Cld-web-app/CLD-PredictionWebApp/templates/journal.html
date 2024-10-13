@@ -1,0 +1,902 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        {% if title %}
+        <title>CassavaLeafDiseaseIdentification-{{ title }}</title>
+        {% else %}
+        <title>CassavaLeafDiseaseIdentification</title>
+        {% endif %}
+
+        <link rel="shortcut icon" href="./static/cassava.png" type="image/x-icon" >
+	<meta http-equiv="content-type" content="text/html; charset=windows-1252"/>
+	<title></title>
+	<meta name="generator" content="Neat Office 6.2.8.2 (Windows)"/>
+	<meta name="author" content="vishnu jk"/>
+	<meta name="created" content="2021-04-06T06:46:00"/>
+	<meta name="changedby" content="WELCOME"/>
+	<meta name="changed" content="2021-04-06T07:01:00"/>
+	<meta name="AppVersion" content="12.0000"/>
+	<meta name="Company" content="Microsoft"/>
+	<meta name="DocSecurity" content="0"/>
+	<meta name="HyperlinksChanged" content="false"/>
+	<meta name="LinksUpToDate" content="false"/>
+	<meta name="ScaleCrop" content="false"/>
+	<meta name="ShareDoc" content="false"/>
+	<style type="text/css">
+		@page { size: 8.5in 11in; margin: 1in }
+		p { margin-bottom: 0.1in; direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2; background: transparent }
+		p.ctl { font-family: "Latha" }
+		h1 { margin-bottom: 0in; direction: ltr; color: #2f5496; line-height: 115%; text-align: left; page-break-inside: avoid; orphans: 2; widows: 2; background: transparent; page-break-after: avoid }
+		h1.western { font-family: "Calibri Light", serif; font-size: 16pt }
+		h1.cjk { font-family: "MS Gothic"; font-size: 16pt }
+		h1.ctl { font-family: "Times New Roman"; font-size: 16pt }
+	</style>
+</head>
+<style>
+    .body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .topnav {
+      overflow: hidden;
+      background-color: #347C2C;
+    }
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    .topnav a:hover {
+      background-color: #F0FFFF;
+      color: black;
+    }
+    .navbar-brand{
+      font-family:Fantasy;
+      color:#FFFFFF;
+    }
+    .content{
+      margin: center;
+      font-family:Monospace;
+      background-color: lightblue;
+      border-style: solid;
+    }
+
+
+  </style>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p align="justify" style="margin-bottom: 0.11in; line-height: 100%">
+	<div class="topnav">
+		<a class="navbar-brand" href="#">CassavaLeaf Disease Identification</a>
+		<a  href="home.html">Home</a>
+		<a href="journal.html">Journals</a>
+		<a href="Images.html">Images</a>
+		<a href="about.html">About</a>
+	  </div>
+	  <br><br>
+
+<font face="Calibri, serif"><font color="#5b9bd5"><font face="Arial Black, serif"><font size="5" style="font-size: 20pt">Cassava
+Leaf Disease Identification Using Deep Learning Techniques.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.03in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="5" style="font-size: 17pt"><b>Abstract</b></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.03in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Our
+work is to develop a model through deep learning techniques to
+identify the disease which affect the Cassava Plant. A set 21,000
+sample images were collected and categorized into four classes of
+diseases are Cassava Mosaic Disease (CMD), Cassava Bacterial Blight
+(CBB), Cassava Green Mite (CGM), Cassava Brown Streak (CBS). These
+sample images were taken on the agricultural field in Uganda and
+annotated by experts at the NCRRI with the AI lab at University in
+Kampala. This is in a format that most realistically represents what
+farmers would need to diagnose in real life. An accurate model was
+created using Convolution Neural Network (CNN) to identify the
+affected/unaffected leaves. And this model was converted into a web
+application for a better identification. This model had an 70%-85%
+accuracy.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.03in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="5" style="font-size: 17pt"><b>1.Introduction</b></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font color="#202124"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Cassava
+is a starchy root vegetable or tuber with a nutty taste. It's a big
+source of calories and carbohydrates for people in developing
+countries, and it's native to South America. Its biological name is
+Manihot esculenta and the common names are macaxeira, mandioca,
+aipim, agbei, manioc and yuca. Cassava is a calorie-dense vegetable
+that is high in carbohydrates as well as essential vitamins and
+minerals. Vitamin C, thiamine, riboflavin, and niacin are all found
+in abundance in cassava. The leaves, which can also be cooked or
+dried in the sun, can contain up to 25% protein. Cassava is a
+perennial plant with prominent, almost palmate (fan-shaped) leaves
+that are similar to those of the related castor oil plant but have
+five to nine lobes. The fleshy roots have a similar texture to dahia
+tubers. Low herbs to branching shrubs and slender unbranched trees
+are among the several types. Others have adapted to dry alkaline soil
+zones, while others have adapted to acid mud banks along rivers.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font color="#202122"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Cassava
+is one of the most drought-tolerant crops, can be grown successfully
+on poor soils, and produces fair yields in areas where many other
+crops fail. Cassava grows well at latitudes 30&deg; north and south
+of the equator, at elevations between sea level and 2,000 m (7,000
+ft) above sea level, in equatorial temperatures, with annual
+rainfalls ranging from 50 to 5,000 mm (2 to 200 in), and at
+elevations between sea level and 2,000 m (7,000 ft) above sea level.
+Bad soils ranging from acidic to alkaline in pH. In some parts of
+Africa and South America, these conditions are normal. Farmers across
+Africa are growing cassava on a small, medium, and large scale in a
+variety of environmental and climatic conditions, contributing to
+food security and industrial crops, but the main challenge is that
+cassava plants are susceptible to a wide range of pathogens,
+including less well-known viral strains.</font></font></font><font face="Arial, serif"><font size="3" style="font-size: 12pt">
+It is an annual root crop that grows in tropical and subtropical
+regions and the most widely grown root crop that produces an edible
+tuber which is a third major source of carbohydrates. For around 800
+million people worldwide, rice and maize are the most important
+foods. As the case study, the most predominant disease is commonly
+found are cassava bacterial blight (CBB) disease. The early symptoms
+are translucent water-soaked spots which over the time it become dark
+angular green spots on the leaf. Secondly, the cassava mosaic which
+is a virus-induced cassava disease and found mostly in Africa and
+India with the identified causative Gemini viruses seem in the Indian
+cassava mosaic virus (ICMV), the African cassava mosaic virus (ACMV)
+and the East African cassava mosaic virus (EACMV). The symptoms
+include observable mosaic patterns on the leaves of the affected
+plants, the leaf appearing pale yellow with only a tinge of green,
+general leaf whiteness and leaf paleness.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="5" style="font-size: 17pt"><b>2.Literature
+review</b></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">This
+starchy root is grown in Africa, but viral diseases are a major cause
+of low yields. Cassava green mite (CGM), cassava bacterial blight
+(CBB), cassava mosaic disease (CMD), and cassava brown streak disease
+are some of the diseases that affect cassava (CBSD).</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">1.
+CGM (cassava green mite)</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">White
+spots occur on the leaves as a result of it. It begins as small spots
+that expand to cover the entire leaf surface, causing chlorophyll
+loss and thus affecting photosynthesis. In addition to mottling
+symptoms that are easily mistaken with cassava mosaic, extreme CGM
+causes the infected leaves to dry out, shrink, and break away from
+the plant.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">2.
+CBB (Cassava Bacterial Blight)</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Moisture
+is to blame for this bacterial infection. Cassava plants in wet areas
+are thus the most vulnerable. Black leaf spots and blights are the
+most common symptoms. As a result of wilting, the infected leaves dry
+prematurely and shed.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">3.CBSD
+(Casava Brown Streak Disease)</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Symptoms
+include a distinctive vein yellow that sometimes enlarges and forms
+visually broad yellow patching. CBSD also causes dark-brown necrotic
+areas on the tuber base, as well as a decrease in root size. These
+variations are due to differences in growing conditions, plant age,
+and virus types. Brown streaks can appear on the cassava plant's
+stems. In addition, there is a dry brown-black necrotic rot of the
+cassava tuber that may spread from a small lesion to the entire root.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">4.CMD
+(Cassava Mosaic Disease)</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Cassava
+mosaic virus is the common name for any of eleven distinct plant
+pathogenic viruses belonging to the genus Begom virus. It causes
+mottling, mosaic rust, twisted leaves, and a general reduction in the
+size of leaves, as well as the affected plants. Patches of green are
+often mixed in with the various colours of yellow and white patches
+on leaves. The patches minimise photosynthesis surface area,
+resulting in stunted growth and low yield.</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><img src="cassava%20disease%20main_html_1dc3bd5f9aadfb.jpg" name="Picture 326205369" align="left" hspace="15" width="214" height="160" border="0"/>
+<img src="cassava%20disease%20main_html_c854e8df58ec871a.jpg" name="Picture 1032848765" align="left" hspace="15" width="212" height="159" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 0.2in"><font face="Calibri, serif"><font face="Consolas, serif"><b>Cassava
+Bacterial Blight (CBB)        Cassava Brown Streak Disease (CBSD)</b></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><img src="cassava%20disease%20main_html_7d0d415e5be679eb.jpg" name="Picture 1170727443" align="left" hspace="15" width="218" height="164" border="0"/>
+<img src="cassava%20disease%20main_html_626078e2cb66500e.jpg" name="Picture 1912760092" align="left" hspace="15" width="225" height="169" border="0"/>
+<img src="cassava%20disease%20main_html_21906ef4123eb266.jpg" name="Picture 168106133" align="left" hspace="15" width="211" height="159" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Consolas, serif"><b>Cassava
+Green Mottle (CGM)         Cassava Mosaic Disease (CMD)</b></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 0.2in">
+                     <font face="Calibri, serif"><font face="Consolas, serif"><font size="3" style="font-size: 12pt"><b>Healthy
+Cassava leaf</b></font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 0.2in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 0.2in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 0.2in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 0.2in"><font face="Calibri, serif"><font face="Times New Roman, serif"><font size="5" style="font-size: 17pt"><b>3.
+Existing methods</b></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 0.2in"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">There
+were several methods for the leaf disease identification but to
+specific Cassava crop there was very less methods are available. On
+their early works deep learning technique was used for the diagnosis.
+The CNN model was created and trained using a small dataset with a
+lot of class imbalance. The data was highly skewed towards the CMD
+and CBSD classes, necessitating the use of different techniques to
+balance the classes. There has also been no experimentation with
+training CNNs from scratch to detect cassava mosaic and other cassava
+diseases using an imbalanced dataset for classification of cassava
+mosaic and other cassava diseases. Class weight, focal loss, SMOTE,
+and various image measurements were used, with the input form of a
+vector (448, 448, 3) providing the best results. Also, images with
+broad input form dimensions. When class-imbalanced rectification
+techniques were combined with data augmentation and large input image
+measurements, they got an improvement in accuracy of over 5% and a
+log loss of 0.06 percent, down from over 20%.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 0.2in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 0.2in"><font face="Calibri, serif"><font face="Times New Roman, serif"><font size="5" style="font-size: 17pt"><b>4.
+Proposed Method</b></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">The
+proposed algorithm for this work is Convolution Neural Network (CNN)
+to build a low-cost method with a maximum accuracy through deep
+learning with some image processing techniques such as preprocessing,
+reshaping, rescaling and also with implementation, labeling,
+training/testing the model to achieve the desired accuracy. we
+gathered a set of 21,000 sample images and trained a model with
+balanced and biased classes to achieve the maximum accuracy.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Times New Roman, serif"><font size="5" style="font-size: 17pt"><b>5.
+Methodology</b></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">The
+Web Application was created using python Flask. Visual Studio code
+was used to interact between the model and web application. The model
+was trained using Convolution Neural Networks (CNN) through deep
+learning techniques. This model is trained based on the sample images
+which is categorized and classified based on the requirement.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">5.1
+Model Development</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">The
+development of deep learning model trained process is shown.</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><img src="cassava%20disease%20main_html_4c5052e00c91efdd.jpg" name="Picture 125028972" align="left" hspace="15" width="441" height="226" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font color="#111111"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Deep
+learning is the part of the machine learning which is used to handle
+the datasets which comes under Artificial Intelligence, it
+categorized in two types supervised and unsupervised. To carry out
+the machine learning process, it employs a hierarchical level of
+artificial neural networks. Artificial neural networks are designed
+in the same way as the human brain, with neuron nodes linked in a
+web-like pattern. Although conventional programmes construct analysis
+with data in a linear manner, deep learning systems' hierarchical
+function allows machines to process data in a nonlinear manner. This
+model had an input/output layer sandwiched between a slew of hidden
+layers that were all linked together.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">TensorFlow
+was built with massive numerical computations in mind, not with deep
+learning in mind.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 106%"><img src="cassava%20disease%20main_html_71513e47f631c50c.jpg" name="Picture 1655512846" align="left" hspace="15" width="471" height="245" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 115%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">CNN
+(Convolutional Neural Network): Convolutional Neural Networks (CNN)
+are one of the most well-known deep learning algorithms, and they're
+also one of the most widely used in image classification.
+Convolutional layers, pooling layers, and completely linked layers
+are the three types of layers used in the CNN architecture. The CNN
+algorithm takes an input image and processes it across layers to
+classify features and recognize the image before generating a
+classification result. Convolutional and pooling layers alternate in
+the architecture of the CNN, which is accompanied by a series of
+completely linked layers. Each layer's output becomes the input for
+the next layer in the CNN.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 106%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">A)
+Image Input Layer: The image size is defined in an imageInputLayer,
+which in this case is 28-by-28-by-1. The height, width, and channel
+size are all represented by these numbers. Since the digit data is in
+grayscale, the channel size (color channel) is 1. The channel size
+for a color picture is 3, which corresponds to the RGB values. You
+don't need to shuffle the data because train Network does so
+automatically at the start of the training. During preparation, train
+Network can also automatically shuffle the data at the start of each
+epoch.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 106%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">B)
+Convolutional Layer: The first claim in the convolutional layer is
+filter Size, which is the height and width of the filters used by the
+training function when scanning the images. The number 3 means that
+the filter size is 3-by-3 in this case. The height and width of the
+filter can be specified in various sizes. The second argument, Num
+Filters, is the number of filters, which is the number of neurons
+that bind to the same input field. The number of feature maps is
+determined by this parameter. To add padding to the input function
+map, use the 'Padding' name-value pair. 'Same' padding guarantees
+that the spatial output size is the same as the input size for a
+convolutional layer with a default stride of 1. The stride and
+learning rates for this layer can also be described using the
+name-value pair arguments of convolution2dLayer.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.07in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">C)Batch
+Normalization Layer: The activations and gradients propagating
+through a network are normalised by batch normalisation layers,
+making network training a simpler optimization problem. To speed up
+network training and minimise sensitivity to network initialization,
+use batch normalisation layers between convolutional layers and
+nonlinearities, such as ReLU layers. To make a batch normalisation
+layer, use batchNormalizationLayer.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">D)
+ReLU Layer:  A nonlinear activation function follows the batch
+normalisation layer. The rectified linear unit is the most common
+activation function (ReLU). To render a ReLU sheet, use reluLayer.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">E)FullyConnectedLayer:</font></font></font><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">
+ One or more fully connected layers follow the convolutional and
+downsampling layers. A completely connected layer, as the name
+implies, is one in which all of the neurons in the preceding layer
+are connected. To recognise the larger patterns, this layer combines
+all of the features learned from the previous layers across
+theiimage.The final completely linked layer incorporates the features
+for image classification. As a consequence, the number of classes in
+the target data equals the OutputSize parameter in the last fully
+connected layer. The output size in this example is ten, which
+corresponds to the ten classes. To make a completely connected layer,
+use fullyConnectedLayer.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">F)
+SoftMax Layer: The fully connected layer's output is normalised using
+the SoftMax activation function. The SoftMax layer produces a set of
+positive numbers that add up to one, which the classification layer
+can use as classification probabilities. After the last completely
+connected layer, use the SoftMax Layer feature to build a SoftMax
+layer.</font></font></font></font></p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.04in; line-height: 115%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">G)
+Classification Layer:  The classification layer is the last layer.
+This layer assigns each input to one of the mutually exclusive groups
+and computes the loss using the probabilities returned by the SoftMax
+activation function. Using classification Layer to render a
+classification layer.</font></font></font></font></p>
+<p class="western" align="justify" style="text-indent: 0.5in; margin-bottom: 0.14in">
+<img src="cassava%20disease%20main_html_3949d23d640563d0.jpg" name="Picture 171301663" align="left" hspace="15" width="399" height="231" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.08in; line-height: 115%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">5.2
+Environment setup</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">For
+this project, 64 bits windows 10 operating system laptop with 8GB
+RAM, 200GB SSD hard disk and i5 processor followed by Anaconda IDE
+(Integrated Development Environment) and all the necessary libraries
+including python, tensor flow latest version and Jupyter notebook
+with GPU (Graphical Processing Unit). Other than splitting the photos
+into safe and unhealthy folders, the raw colour images of both
+healthy and unhealthy cassava leaves in the Joint Photographic Expert
+Group (JPEG) file were split into 5 directories representing each
+class (multi-class) (binary-class). This will allow for the
+classification of four separate cassava disease types, which are
+high-impact but difficult agricultural problems.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">5.3
+Data collection </font></font></font>
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">The
+photographs of cassava leaves were taken from an agricultural field
+in Uganda and annotated by experts from the NCRRI and the University
+of Kampala's AI lab. More than 21,000 sample images classified into
+four classes and labelled with each other. All these collected images
+were modified based on requirements in the trained model. The
+histogram of our data is shown below.</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><img src="cassava%20disease%20main_html_87e901d5a785ea07.jpg" name="Picture 1848971924" align="left" hspace="15" width="383" height="236" border="0"/>
+<br/>
+<br/>
+
+</p>
+<center>
+	<table width="580" cellpadding="9" cellspacing="0">
+		<col width="109"/>
+
+		<col width="342"/>
+
+		<col width="73"/>
+
+		<tr valign="top">
+			<td width="109" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt"><b>Classes</b></font></font></p>
+			</td>
+			<td width="342" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt"><b>Diseases</b></font></font></p>
+			</td>
+			<td width="73" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt"><b>Images</b></font></font></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="109" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt">Class
+				0</font></font></p>
+			</td>
+			<td width="342" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">Cassava
+				Bacterial Blight (CBB)</font></font></font></p>
+			</td>
+			<td width="73" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">1087</font></font></font></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="109" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt">Class
+				1</font></font></p>
+			</td>
+			<td width="342" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">Cassava
+				Brown Streak Disease (CBSD)</font></font></font></p>
+			</td>
+			<td width="73" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">2189</font></font></font></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="109" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt">Class
+				2</font></font></p>
+			</td>
+			<td width="342" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">Cassava
+				Green Mottle (CGM)</font></font></font></p>
+			</td>
+			<td width="73" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">2386</font></font></font></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="109" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt">Class
+				3</font></font></p>
+			</td>
+			<td width="342" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">Cassava
+				Mosaic Disease (CMD)</font></font></font></p>
+			</td>
+			<td width="73" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">2577</font></font></font></p>
+			</td>
+		</tr>
+		<tr valign="top">
+			<td width="109" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font size="3" style="font-size: 13pt">Class
+				4</font></font></p>
+			</td>
+			<td width="342" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">Healthy</font></font></font></p>
+			</td>
+			<td width="73" style="background: transparent" style="border: 1px solid #000000; padding: 0in 0.08in"><p align="justify">
+				<font face="Calibri, serif"><font color="#212121"><font size="3" style="font-size: 13pt">13158</font></font></font></p>
+			</td>
+		</tr>
+	</table>
+</center>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">5.4
+Model Architecture</font></font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Using
+the dataset, train test split occurs to train the model. </font></font></font><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">An
+implementation of keras was used in that Image Data Generator to
+supplement the images in real-time while your model was still
+practising! As each training image is passed to the model, you can
+add any random transformations you want. This will not only make your
+model more stable, but it will also save you memory.</font></font></font><font color="#202124"><font face="Arial, serif"><font size="3" style="font-size: 12pt">
+It was very helpful to reshape and rescale the images for train and
+validation process. EfficientNetB3 and GlobalAveragePooling2D were
+used to reshaping the image for creating a model with many hidden
+layers. EfficientNet is a convolutional neural network architecture
+and scaling approach that uses a compound coefficient to scale all
+depth/width/resolution dimensions uniformly. GlobalAveragePooling2D
+average pools the spatial dimensions until each is one, then leaves
+the other dimensions alone. Fitting the model with epoch of 5 and
+step size of validation and training set with batch size is 32.Epoch
+is once all images are processed one time individually of forward and
+backward to the network. And the final model is saved as a
+</font></font></font><font face="Arial, serif"><font size="2" style="font-size: 10pt">Cassava_modelEffNetB3.h5
+file.</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><img src="cassava%20disease%20main_html_9de603904fa70a2c.jpg" name="Picture 1008744535" align="left" hspace="15" width="354" height="376" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 0.2in"><img src="cassava%20disease%20main_html_76c5b6ce3da61476.jpg" name="Picture 416201160" align="left" hspace="15" width="721" height="113" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 0.2in"><font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">For
+better performance and accuracy retrain the model again with epoch of
+3 and batch size of 32 shown below. Then save and fit the model as
+Cassava_modelEffNetB3V3.h5 file. This is the final model which is
+used to predict the disease and shown in the web application.</font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><img src="cassava%20disease%20main_html_79a9004ed8b188f4.jpg" name="Picture 685022938" align="left" hspace="15" width="775" height="108" border="0"/>
+<br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font face="Arial, serif"><font size="3" style="font-size: 12pt">During
+training, there were two types of parameters: those that were learned
+from the model, such as the weights, and those that were tuned, such
+as learning speeds, the number of epochs, batch size, input form,
+optimizer, and the number of neurons in the hidden layers, which were
+all hyper-parameters. The impact of different input image dimensions
+on the accuracy of CNN models was addressed. So, as CNN was
+practising, it used some of these hyper-parameters; however, the
+model was improved by using tuning techniques to find some of the
+best values for these hyper-parameters. The explanation for this is
+that neural networks are difficult to configure and have a lot of
+parameters to set up, not to mention that individual models can take
+a long time to train.</font></font></p>
+<p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+<br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Times New Roman, serif"><font size="5" style="font-size: 17pt"><b>6.
+Results </b></font></font></font>
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font face="Arial, serif"><font size="3" style="font-size: 12pt">When
+the final model was trained. We could see that our network can start
+learn and predict the input image which was loaded at a maximum rate.
+CNN uses a hierarchical model that creates a network in the form of a
+funnel and then outputs a fully-connected layer in which all neurons
+are connected to one another and the output is processed. While
+training the model, it undergoes various modification like
+ImageDataGenerator, Efficient Net. While train test split, Using
+ImageDataGenerator we can augment our sample images with many
+parameters like height, width, shape etc. Efficient Net is a scaling
+and design approach that scales all dimensions of depth width
+resolution techniques uniformly. It uses activation functions such as
+relu6, hyperbolic transfer function, linear, and others to train the
+data and improve accuracy. We perform a nonlinear transformation on
+the input before sending it to the next layer of neurons or
+finalising it as output. After that, cassva modelEffNetB3V3.h5 was
+saved as the final model.</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font color="#202124"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Then,
+the test image is loaded and it was compared to the model and the
+model predict the test image whether it is affected or not. If the
+test image is affected, the model would try to find the disease name
+by analyze the class which was labelled. The final output was
+displayed in the web application. The model does a decent job of
+predicting the various forms of cassava diseases.</font></font></font></p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Times New Roman, serif"><font size="5" style="font-size: 17pt"><b>7.
+Conclusions</b></font></font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Our
+work here was to develop the CNN model and trained it with an
+enormous data. These data are categorized into five classes namely
+Cassava Bacterial Blight, Cassava Mosaic disease, Cassava Green mite,
+Cassava Brown Streak and Healthy cassava leaf. The 21,000 sample
+images are labelled with these classes. Only CMD class is biased. Our
+model performance shows better results and it predicts the output
+with maximum accuracy rate of 70-85%. Global Average Pooling2D is
+used to change the input images various dimensional to two
+dimensional and flatten it with many hidden layers. The input vector
+shape of the image is (300,300,3) within small vector shape our model
+show the best performance. The model gets trained two times to
+increase the accuracy rate. As a consequence, this model can be
+incorporated in a web/mobile framework for farmers or agricultural
+workers to use. It can be used in a real-time monitoring system to
+provide early warning of cassava infections such that appropriate
+preventive measures can be implemented, or it can be used in a
+large-scale implementation using satellite imagery analysis to
+identify infestation areas.The most subsistence farmers in
+Sub-Saharan Africa cannot afford smartphones, so they propose
+preventive techniques.</font></font></p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+<p align="justify" style="margin-bottom: 0.11in; line-height: 106%"><font face="Calibri, serif"><font face="Times New Roman, serif"><font size="5" style="font-size: 17pt"><b>References</b></font></font></font></p>
+<ol>
+	<li><p align="justify" style="margin-bottom: 0.04in; line-height: 0.17in">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Cassava
+	disease detection and classification with imbalanced dataset using
+	CNN.G. Sambasivam, Geoffrey Duncan Opiyo 2019-2020</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Identification
+	of Putative Sources of Resistance for Cassava Brown Streak Disease
+	M. N. Maruthi*, Sophie Bouvaine, Hale A. Tufan&curren; , Ibrahim U.
+	Mohammed, Rory J. Hillocks.</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Detection
+	and Classification of Cassava Diseases Using Machine Learning     
+	OzichiEmuoyibofarhe, justice O.Emuoyibofarhe, Segun Adebayo3,
+	Adebamiji Ayandiji, Oloyede Demeji5 and Oreoluwa James6.</font></font></font></p>
+	<li><h1 class="western" align="justify"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">A
+	Mobile-Based Deep Learning Model for Cassava Disease Diagnosis</font></font></font></h1>
+	<li><p align="justify" style="margin-bottom: 0.11in; line-height: 106%">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">A
+	Data Augmentation Method Based on Generative Adversarial Networks
+	for Grape Leaf Disease Identification.</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.11in; line-height: 106%">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Plant
+	disease identification and classification using Back-Propagation
+	Neural Network with Particle Swarm Optimization</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">An
+	Individual Grape Leaf Disease Identification Using Leaf Skeletons
+	and KNN Classification, N. Krithika, Dr. A. Grace Selvarani</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Real-time
+	Hevea Leaves Diseases Identification using Sobel Edge Algorithm on
+	FPGA: A Preliminary Study.</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Maize
+	Leaf Disease Identification Based on Feature Enhancement and
+	DMS-Robust Alexnet</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+	<font face="Calibri, serif"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Olive
+	Spot Disease Detection and Classification using Analysis of Leaf
+	Image Textures</font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.03in; line-height: 0.17in">
+	<font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Identification
+	and Counting of Brown Planthopper in Paddy Field using Image
+	processing Techniques</font></font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.06in; line-height: 100%">
+	<font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Image
+	Processing Techniques for Diagnosing Rice Plant Disease.</font></font></font></font></p>
+	<li><p align="justify" style="margin-bottom: 0.06in; line-height: 100%">
+	<font face="Calibri, serif"><font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Detection
+	and diagnosis of Plant Leaf Disease using Integrated Image
+	Processing</font></font></font></font></p>
+	<li><h1 class="western" align="justify" style="margin-top: 0in; margin-bottom: 0.06in; line-height: 100%">
+	<font color="#000000"><font face="Arial, serif"><font size="3" style="font-size: 12pt">Deep
+	Learning for Image-Based Cassava Disease Detection October 2017
+	DCGAN-Based Data Augmentation for Tomato Leaf Disease Identification</font></font></font></h1>
+</ol>
+<p class="western" align="justify" style="margin-bottom: 0.14in"><br/>
+<br/>
+
+</p>
+</body>
+</html>
